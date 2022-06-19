@@ -1,0 +1,32 @@
+package com.samsung.android.samsungpay.gear.app;
+
+import android.app.Activity;
+import android.content.ComponentName;
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+
+public class MainActivity extends Activity {
+    private static final String TAG = "SPayToGPay";
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        Log.d(TAG, "Started MainActivity. Attempting to start Google Pay.");
+
+        // Build intent to launch Google Pay
+        Intent activityIntent;
+        activityIntent = new Intent(Intent.ACTION_MAIN);
+        activityIntent.setComponent(ComponentName.unflattenFromString("com.google.android.apps.walletnfcrel/com.google.commerce.tapandpay.android.wearable.cardlist.WearPayActivity"));
+
+        try {
+            startActivity(activityIntent);
+
+        } catch (Exception e) {
+            Log.e(TAG, "Failed to start Google Pay activity");
+            e.printStackTrace();
+        }
+        finish();
+    }
+}
