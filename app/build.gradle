@@ -9,8 +9,8 @@ android {
         applicationId "com.samsung.android.samsungpay.gear"
         minSdk 30
         targetSdk 32
-        versionCode 900000000
-        versionName "9001.0"
+        versionCode 900000001
+        versionName "9002.0"
 
     }
 
