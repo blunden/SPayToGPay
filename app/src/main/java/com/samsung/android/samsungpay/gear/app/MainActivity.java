@@ -18,7 +18,7 @@ public class MainActivity extends Activity {
         // Build intent to launch Google Pay
         Intent activityIntent;
         activityIntent = new Intent(Intent.ACTION_MAIN);
-        activityIntent.setComponent(ComponentName.unflattenFromString("com.google.android.apps.walletnfcrel/com.google.commerce.tapandpay.android.wearable.cardlist.WearPayActivity"));
+        activityIntent.setComponent(ComponentName.unflattenFromString("com.google.android.apps.walletnfcrel/com.google.commerce.tapandpay.wear.cardlist.WalletThemedWearCardListActivity"));
 
         try {
             startActivity(activityIntent);
