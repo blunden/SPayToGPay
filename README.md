@@ -9,4 +9,6 @@ Watches that ship without Samsung Pay end up with a long-press
 shortcut that they can't remap. This app makes the shortcut
 launch Google Pay instead.
 
+**NOTE:** Requires a watch reboot to take effect.
+
 [XDA Developers](https://forum.xda-developers.com/t/spaytogpay-remap-samsung-pay-long-press-shortcut-to-google-pay-on-watches-in-regions-shipping-without-samsung-pay.4459229/)
