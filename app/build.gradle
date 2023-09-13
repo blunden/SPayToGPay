@@ -3,14 +3,14 @@ plugins {
 }
 
 android {
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.samsung.android.samsungpay.gear"
         minSdk 30
-        targetSdk 32
-        versionCode 900000002
-        versionName "1.2"
+        targetSdk 33
+        versionCode 900000003
+        versionName "1.3"
 
     }
 
