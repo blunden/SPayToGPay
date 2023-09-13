@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SPayToGPay</string>
+    <string name="error_missing_permission">Requires SYSTEM_ALERT_WINDOW permission</string>
 </resources>

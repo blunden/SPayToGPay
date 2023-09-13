@@ -3,6 +3,7 @@
     package="com.samsung.android.samsungpay.gear">
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
     <uses-feature android:name="android.hardware.type.watch" />
 
@@ -12,16 +13,61 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@android:style/Theme.DeviceDefault">
+
         <activity
             android:name=".app.MainActivity"
-            android:exported="true"
-            android:excludeFromRecents="true">
+            android:excludeFromRecents="true"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.INFO" />
             </intent-filter>
         </activity>
+
+        <activity-alias
+            android:name=".app.MainActivityPay"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:targetActivity=".app.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.INFO" />
+            </intent-filter>
+        </activity-alias>
+        <activity-alias
+            android:name=".app.MainActivityWallet"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:targetActivity=".app.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.INFO" />
+            </intent-filter>
+        </activity-alias>
+        <activity-alias
+            android:name=".ui.SpayMainActivity"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:targetActivity=".app.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.INFO" />
+            </intent-filter>
+        </activity-alias>
+
+        <receiver
+            android:name=".presentation.WalletLaunchReceiver"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":ui">
+            <intent-filter>
+                <action android:name="com.samsung.android.wearable.sysui.action.CHECK_AND_LAUNCH_WALLET" />
+            </intent-filter>
+        </receiver>
 
         <uses-library
             android:name="com.google.android.wearable"
@@ -30,17 +76,6 @@
         <meta-data
             android:name="com.google.android.wearable.standalone"
             android:value="true" />
-
-        <activity
-            android:name=".ui.SpayMainActivity"
-            android:exported="true"
-            android:excludeFromRecents="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.INFO" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>
